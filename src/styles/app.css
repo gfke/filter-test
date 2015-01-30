@@ -16,3 +16,7 @@ body {
 a, a:visited {
   text-decoration: none;
 }
+
+button{
+    margin-top: 50px;
+}

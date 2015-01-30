@@ -1,6 +1,54 @@
-<div class="welcome">
-  <a href="https://github.com/jgoux/generator-angulpify" title="Yeoman Angulpify Generator">
-    <img src="assets/images/angulpify.png">
-  </a>
-  <h1>{{welcome}}</h1>
+<h1>Filters</h1>
+
+<div ng-repeat="(name, values) in option">
+    <select multi-select-filter
+            name="name"
+            values="values"
+            ng-hide="values == null || values.length == 0">
+
+    </select>
 </div>
+
+<div class="clearfix"></div>
+
+<div boolean-filter
+     ng-repeat="filter in bool"
+     name="filter.name"
+     ng-hide="filter == null">
+</div>
+
+<div class="clearfix"></div>
+
+<div date-filter
+     ng-repeat="filter in date"
+     name="filter.name"
+     min="{{min}}"
+     min="{{max}}">
+</div>
+
+<div class="clearfix"></div>
+
+<div text-filter
+     ng-repeat="filter in query"
+     name="filter.name"
+
+     multichoice="true"
+     dataurl="/bookdach/filter/eancid"
+     qeryfields=""
+     datafields=""">
+</div>
+
+<div class="clearfix"></div>
+
+<div number-filter
+     ng-repeat="filter in int"
+     name="filter.name">
+</div>
+
+<button ng-click="refresh()">
+    Refresh filter permissions
+</button>
+
+<button ng-click="reset()">
+    Reset all filters
+</button>

@@ -2,4 +2,4 @@
 
 module.exports =
     angular.module('filterTest.common.services', [])
-        .factory('dwhApiService', require('./dwhApiService'));
+        .factory('dwhApiFactory', require('./dwhApiFactory'));
